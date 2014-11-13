@@ -247,3 +247,159 @@ int main()
 	cout << "\nLauseessa oli yhteens‰ " << lkm << " kirjainta";
 	return 0;
 }*/
+
+/*#include <iostream>
+using namespace std;
+void main()
+{
+	int pp;
+	int kk;
+	int vv;
+	cout << "Anna pvm pp kk vv:";
+		cin >> pp >> kk >> vv;
+		cout << "Paiva " << pp << endl;
+		cout << "Kuukausi " << kk << endl;
+		cout << "Vuosi " << vv << endl;
+}*/
+
+/*Esimerkki 9-3
+#include <iostream> 
+using namespace std;
+struct PVM
+{
+	char vp[20];
+	int pp, kk, vv;
+	
+};
+int main()
+{
+	PVM pvm1 = {" jokupaiva", 1, 1, 2014 };
+	PVM pvm2;
+	cout << "\nMonesko p‰iv‰ t‰n‰‰n on "
+		"(syˆt‰ muodossa 99 99 99 viikonpaiva)?\n";
+	cin >> ws >> pvm2.pp >> ws >> pvm2.kk >> ws >> pvm2.vv >> ws >> pvm2.vp;
+	cout << "\nVuoden ensimm‰inen p‰iv‰ on: ";
+	cout << pvm1.pp << '.' << pvm1.kk << '.' << pvm1.vv << pvm1.vp;
+	cout << "\nT‰n‰‰n on: " << pvm2.pp << '.' << pvm2.kk << '.' << pvm2.vv << " " << pvm2.vp;
+	return 0;
+}*/
+/*
+#include <iostream> 
+using namespace std;
+int main()
+{
+	const int max = 5;
+	int luvut[max] = { 1, 2, 3, 4, 5 };
+	int ind;
+	//for (ind = 0; ind > max; ind++)
+	ind = 4;
+	while (ind > -1)
+	{
+		cout << "\nJ‰rjestysnumero: " << ind;
+		cout << " Sis‰ltˆ: " << luvut[ind];
+		ind--;
+	}
+	return 0;
+}*/
+/*Esimerkki 9-12
+#include <iostream> 
+using namespace std;
+struct PVM
+{
+	int pp, kk, vv;
+};
+int main()
+{
+	PVM paivat[5] = { { 1, 1, 96 },
+	{ 1, 2, 96 },
+	{ 1, 3, 96 },
+	{ 1, 4, 96 },
+	{ 1, 5, 96 } };
+	int ind;
+	for (ind = 0; ind < 5; ind++){
+		cout << "Anna" << ind+1 <<". paivamaara: ";
+		cin >> paivat[ind].pp >> paivat[ind].kk >> paivat[ind].vv;
+	}
+	for (ind = 0; ind < 5; ind++)
+	{
+		cout << "\nP‰iv‰: ";
+		cout << paivat[ind].pp << '.';
+		cout << paivat[ind].kk << '.';
+		cout << paivat[ind].vv;
+	}
+	return 0;
+}*/
+
+/*Harjoitus 18 (Palautus vko 46)
+Tee ohjelma, joka kysyy viiden koiran nimet ja i‰t.
+Tiedot tallennetaan tietuetaulukkoon.
+a) j‰rjest‰ tiedot ik‰ -kent‰n mukaan suuruusj‰rjestykseen
+(pienimm‰st‰ suurimpaan). Ohjelma tulostaa lopuksi
+jarjestetyn taulukon n‰yt‰lle.*/
+/*#include <iostream> 
+using namespace std;
+struct koiratiedot
+{
+	char nimi[10];
+	int ika;
+};
+int main()
+{
+	koiratiedot koira[5];
+	int ind, i, j;
+	for (ind = 0; ind < 5; ind++)
+	{
+		cout << "Anna" << ind + 1 << ". koiran nimi ja ik‰.";
+		cin >> koira[ind].nimi >> koira[ind].ika;
+	}
+	for (ind = 0; ind < 5; ind++)
+	{
+		cout << koira[ind].nimi << " " << koira[ind].ika << endl;
+	}
+	
+	
+
+}*/
+/*vaihtolajittelu
+#include <iostream> 
+using namespace std;
+const int MAX_TAULU = 4;
+int main()
+{
+	int taulu[MAX_TAULU] = { 2, 7, 1, 3 };
+	int i, j;
+	cout << "Tulosta tiedot ennen lajittelua" << endl;
+	for (i = 0; i < MAX_TAULU; i++)
+		cout << taulu[i] << " ";
+	cout << "Lajitellaan..." << endl;
+	for (i = 0; i < MAX_TAULU - 1; i++)
+		for (j = i + 1; j < MAX_TAULU; j++)
+			if (taulu[i] > taulu[j])
+{
+		int tmp = taulu[i];
+		taulu[i] = taulu[j];
+		taulu[j] = tmp;
+}
+	cout << "Tulosta tiedot lajittelun j‰lkeen" << endl;
+	for (i = 0; i < MAX_TAULU; i++)
+		cout << taulu[i] << " ";
+			
+}*/
+//Esimerkki 9-14
+#include <iostream> 
+using namespace std;
+int main()
+{
+	int luku[4] = { 2, 4, 5, 6 };
+	int *osoitin; //M‰‰ritell‰‰n osoitin
+	osoitin = &luku[0];//alustetaan osoitin
+	cout << "\nLuku-muuttujan osoite on: " << osoitin;
+	cout << "\nLuku-muuttujan osoite on: " << &luku[0];
+	cout << "\nLuku-muuttujan sis‰ltˆ on: " << *osoitin;
+
+	osoitin = &luku[1];//alustetaan osoitin
+	cout << "\nLuku-muuttujan osoite on: " << osoitin;
+	cout << "\nLuku-muuttujan osoite on: " << &luku[1];
+	cout << "\nLuku-muuttujan sis‰ltˆ on: " << *osoitin;
+	return 0;
+}
